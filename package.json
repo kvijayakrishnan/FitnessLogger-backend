@@ -17,5 +17,9 @@
     "express-middleware": "^3.4.2",
     "mongoose": "^7.0.0",
     "nodemon": "^2.0.21"
+  },
+  "engines" : { 
+    "npm" : ">=8.0.0 <9.0.0",
+    "node" : ">=16.0.0 <17.0.0"
   }
 }
