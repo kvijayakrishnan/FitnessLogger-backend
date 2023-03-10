@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const fitnessSchema = new mongoose.Schema({
     date:{
         type: String,
-        // require: true
+        require: true
     },
     name:{
         type: String,
@@ -15,11 +15,11 @@ const fitnessSchema = new mongoose.Schema({
     },
    workout:{
         type:String,
-        // require:true
+        require:true
     },
     burnedCalorie:{
         type:String,
-        // require:true,
+        require:true,
     }
 });
 
