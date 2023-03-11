@@ -17,7 +17,7 @@ const fitnessSchema = new mongoose.Schema({
         type:String,
         require:true
     },
-    burnedCalorie:{
+    burnedcalories:{
         type:String,
         require:true,
     }
