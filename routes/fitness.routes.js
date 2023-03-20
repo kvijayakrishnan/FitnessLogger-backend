@@ -6,7 +6,7 @@ const router = express.Router();
 
 
 // to get fitness dashboard
-router.get('/get', async(req,res)=>{
+router.get('/fitness', async(req,res)=>{
     try{
             const data = await Fitness.find();
             res.status(200).send(data);
@@ -18,7 +18,7 @@ router.get('/get', async(req,res)=>{
 
 // Add new fitness log
 
-router.post('/post', async(req,res) => {
+router.post('/fitness', async(req,res) => {
     const data = req.body;
     const fit = new Fitness(data);
    try{
@@ -32,7 +32,7 @@ router.post('/post', async(req,res) => {
 
 
 // To update an fitness log
-router.put('/put/:fitID', async (req,res) => {
+router.put('/fitness/:fitID', async (req,res) => {
     try{
         const fitnessID = req.params.fitID;
         await Fitness.findOneAndUpdate({_id: fitnessID},{$set:req.body})
@@ -46,7 +46,7 @@ router.put('/put/:fitID', async (req,res) => {
 
 
 // delete log
-router.delete('/delete/:fitID', async (req, res) =>{
+router.delete('/fitness/:fitID', async (req, res) =>{
     try{
         const fitnessID = req.params.fitID;
         

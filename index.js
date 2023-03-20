@@ -24,7 +24,7 @@ app.get('/',(req,res) => {
 
 
 // custom middleware
-app.use('/fitness',fitnessRoutes);
+app.use(fitnessRoutes);
 
 const PORT = process.env.PORT || 4000;
 
