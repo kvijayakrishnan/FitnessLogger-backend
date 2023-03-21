@@ -2,7 +2,7 @@
 require('dotenv').config();
 const express = require('express');
 const db = require('./db/connect');
-// const cors = require('cors')
+const cors = require('cors')
 
 // importing routes
 const fitnessRoutes = require('./routes/fitness.routes');
@@ -15,7 +15,7 @@ db();
 
 // To parse json object
 app.use(express.json());
-// app.use(cors())
+app.use(cors())
 
 
 app.get('/',(req,res) => {
