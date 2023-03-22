@@ -18,8 +18,8 @@ router.get('/fitness', async(req,res)=>{
 // to get single fitness log
 router.get('/fitness/:fitID'), (req,res) =>{
     try{
-        const fitnessID = req.params.fitID
-        console.log(fitnessID);
+        const fitnesID = req.params.fitID
+        console.log(fitnesID);
         Fitness.findOne({_id: req.params.fitID},(err,data) =>{
             if(err){
                 return res.status(400).send({message:'Error while reteriving fitnessLog...'})
