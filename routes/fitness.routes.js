@@ -22,7 +22,7 @@ router.get('/fitness/:fitID'), (req,res) =>{
         console.log(fitnessID);
         Fitness.findOne({_id: req.params.fitID},(err,data) =>{
             if(err){
-                return res.status.(400).send({message:'Error while reteriving fitnessLog...'})
+                return res.status(400).send({message:'Error while reteriving fitnessLog...'})
             }
             return res.status(200).send(data);
         })
@@ -90,31 +90,3 @@ router.delete('/fitness/:fitID', async (req, res) =>{
 
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
