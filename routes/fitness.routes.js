@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 
-// to get fitness dashboard
+// to get all fitness dashboard
 router.get('/fitness', async(req,res)=>{
     try{
             const data = await Fitness.find();
@@ -14,6 +14,22 @@ router.get('/fitness', async(req,res)=>{
         res.status(500).send({message:'Internal server error'});
     }
 });
+
+// to get single fitness log
+router.get('/fitness/:fitID'), (req,res) =>{
+    try{
+        const fitnessID = req.params.fitID
+        console.log(fitnessID);
+        Fitness.findOne({_id: req.params.fitID},(err,data) =>{
+            if(err){
+                return res.status.(400).send({message:'Error while reteriving fitnessLog...'})
+            }
+            return res.status(200).send(data);
+        })
+    }catch(err){
+        res.status(500).send({message:'Internal server error'})
+    }
+}
 
 
 // Add new fitness log
