@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const db = require('./db/connect');
 const cors = require('cors')
+const Fitness = require('./model/fitness.model.js');
 
 // importing routes
 const fitnessRoutes = require('./routes/fitness.routes');
@@ -24,7 +25,7 @@ app.get('/',(req,res) => {
 
 
 // custom middleware
-app.use(fitnessRoutes);
+app.use('/', fitnessRoutes);
 
 const PORT = process.env.PORT || 4000;
 

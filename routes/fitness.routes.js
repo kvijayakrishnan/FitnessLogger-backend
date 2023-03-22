@@ -16,20 +16,17 @@ router.get('/fitness', async(req,res)=>{
 });
 
 // to get single fitness log
-router.get('/fitness/:fitID'), (req,res) =>{
+router.get('/fitness/:id', async(req,res) =>{
     try{
-        const fitnesID = req.params.fitID
+        const fitnesID = req.params.id
         console.log(fitnesID);
-        Fitness.findOne({_id: req.params.fitID},(err,data) =>{
-            if(err){
-                return res.status(400).send({message:'Error while reteriving fitnessLog...'})
-            }
-            return res.status(200).send(data);
-        })
+      let data = await Fitness.findOne({_id: req.params.id},)
+         res.status(200).send(data);
     }catch(err){
         res.status(500).send({message:'Internal server error'})
     }
-}
+})
+
 
 
 // Add new fitness log
